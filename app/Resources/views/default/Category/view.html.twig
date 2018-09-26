@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block body %}
+    <h1 class="text-danger center">{{ category.name }}</h1>
+    <hr>
+    <a class="btn btn-light mb-3" href="{{ path('categories_list') }}">Retour</a>
+    <div class="row">
+        {% for film in category.films %}
+            <div class="col-sm-6 col-md-4">
+                <div class="card mb-3" style="width: 18rem;">
+                    {#{{ film.image }}#}
+                    <img class="card-img-top" src="{{ asset('uploads/images/' ~ film.image) }}" alt="{{ film.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ film.name }}</h5>
+                        <p class="card-text">{{ film.description }}</p>
+                        <a href="{{ path('film_view', {'id' : film.id}) }}" class="btn btn-outline-secondary">Détails du
+                            film</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+
+    <h1>Dashboard</h1>
+    <hr>
+    <ul class="list-group mb-2">
+        <li class="list-group-item list-group-item-info">
+            <a href="{{ path('usersAdmin_list') }}">Voir la liste des utilisateurs</a>
+        </li>
+        <li class="list-group-item list-group-item-info">
+            <a href="{{ path('user_add') }}">Ajouter un utilisateur</a>
+        </li>
+    </ul>
+    <ul class="list-group mb-2">
+        <li class="list-group-item list-group-item-primary">
+            <a href="{{ path('filmsAdmin_list') }}">Voir la liste des films</a>
+        </li>
+        <li class="list-group-item list-group-item-primary">
+            <a href="{{ path('films_add') }}">Ajouter un film</a>
+        </li>
+    </ul>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+            <a href="{{ path('categoryAdmin_list') }}">Voir la liste des catégories</a>
+        </li>
+        <li class="list-group-item list-group-item-info">
+            <a href="{{ path('category_add') }}">Ajouter une Catégorie</a>
+        </li>
+    </ul>
+{% endblock %}
